@@ -1,5 +1,4 @@
 // insert the following code into your browser console
-
 const userAction1 = async () => {
   const response = await fetch('https://www.reddit.com/.json');
   myRedditJson = await response.json();
