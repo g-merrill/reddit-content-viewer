@@ -1,15 +1,15 @@
 // insert the following code into your browser console
+let myRedditJson;
 const userAction1 = async () => {
   const response = await fetch('https://www.reddit.com/.json');
   myRedditJson = await response.json();
-  console.log('DATA:', myRedditJson)
+  console.log('DATA:', myRedditJson);
+  userAction2();
 }
-// userAction1();
+userAction1();
 
 // insert the following code into your browser console
-const userAction2 = async () => {
-  const response = await fetch('https://www.reddit.com/.json');
-  myRedditJson = await response.json();
+const userAction2 = () => {
   const posts = myRedditJson.data.children;
   const currentTime = Math.floor(Date.now() / 1000);
   for (let i = 0; i < posts.length; i++) {
@@ -28,4 +28,3 @@ const userAction2 = async () => {
   	console.log("url: " + postContent.url);  	
   }
 }
-// userAction2();
